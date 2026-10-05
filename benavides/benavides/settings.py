@@ -122,9 +122,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / 'templates'], # O tu ruta actual de templates
         'APP_DIRS': True,
-        # ...
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',  # <--- Soluciona la advertencia W411
+                'django.contrib.auth.context_processors.auth',  # <--- Soluciona el error E402
+                'django.contrib.messages.context_processors.messages', # <--- Soluciona el error E404
+            ],
+        },
     },
 ]
 

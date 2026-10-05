@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Evaluación BackEnd{% endblock %}</title>
-    <!-- Bootstrap CSS CDN -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <!-- Menú de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'inicio_benavides:home' %}">Proyecto Django</a>
+            <a class="navbar-brand" href="{% url 'inicio_benavides:home' %}">Evaluacion 2 BackEnd</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,12 +25,17 @@
         </div>
     </nav>
 
-    <div class="container my-4">
+    <div class="container my-4 flex-grow-1">
         {% block content %}
         {% endblock %}
     </div>
 
-    <!-- Bootstrap JS CDN -->
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="mb-0 text-white">&copy; 2026 Copyright - Jose Benavides</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

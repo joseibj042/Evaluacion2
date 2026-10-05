@@ -5,16 +5,16 @@ def home_view(request):
         {
             'id': 1,
             'nombre': 'Python',
-            'descripcion': 'Lenguaje de programación de alto nivel interpretado.',
-            'imagen1': 'images/tema1_img1.jpg',
-            'imagen2': 'images/tema1_img2.jpg',
+            'descripcion': 'Lenguaje de programación interpretado, de alto nivel y propósito general. Su filosofía enfatiza una sintaxis limpia y una gran legibilidad.',
+            'imagen1': 'images/img1.png',
+            'imagen2': 'images/img2.png',
         },
         {
             'id': 2,
             'nombre': 'Django',
-            'descripcion': 'Framework web para Python enfocado en desarrollo rápido.',
-            'imagen1': 'images/tema2_img1.jpg',
-            'imagen2': 'images/tema2_img2.jpg',
+            'descripcion': 'Framework web de alto nivel para Python que fomenta el desarrollo rápido y un diseño limpio, basado en el patrón arquitectónico MVT.',
+            'imagen1': 'images/img3.png',
+            'imagen2': 'images/img4.png',
         }
     ]
     return render(request, 'inicio_benavides/home.html', {'temas': temas})
@@ -23,13 +23,13 @@ def detalle_tema(request, tema_id):
     temas = {
         1: {
             'nombre': 'Python',
-            'descripcion': 'Detalles avanzados sobre Python.',
-            'imagenes': ['images/tema1_img1.jpg', 'images/tema1_img2.jpg']
+            'descripcion': 'Explora la versatilidad de Python a través de su sintaxis elegante, su amplio ecosistema de librerías y su potencia en áreas como desarrollo web, automatización e inteligencia artificial.',
+            'imagenes': ['images/img1.png', 'images/img2.png']
         },
         2: {
             'nombre': 'Django',
-            'descripcion': 'Detalles avanzados sobre Django.',
-            'imagenes': ['images/tema2_img1.jpg', 'images/tema2_img2.jpg']
+            'descripcion': 'Descubre el poder de Django para construir aplicaciones web seguras, escalables y mantenibles de forma eficiente, aprovechando su potente ORM y su panel de administración integrado.',
+            'imagenes': ['images/img3.png', 'images/img4.png']
         }
     }
     tema = temas.get(tema_id)
