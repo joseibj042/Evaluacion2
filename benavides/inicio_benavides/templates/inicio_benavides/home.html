@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Inicio - Temas{% endblock %}
+{% block content %}
+<h1 class="mb-4 text-center">Listado de Temas</h1>
+<div class="row">
+    {% for tema in temas %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ tema.nombre }}</h5>
+                    <p class="card-text">{{ tema.descripcion }}</p>
+                    {% if tema.nombre %}
+                        <a href="{% url 'inicio_benavides:detalle' tema.id %}" class="btn btn-primary">Ver Imágenes</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
